@@ -382,7 +382,7 @@ function Component1PunkManLine() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex isolate items-center relative shrink-0">
+    <div className="flex isolate items-center relative shrink-0">
       <div className="backdrop-blur-[3.309px] bg-[#e0e0e0] relative rounded-[90px] shrink-0 size-[59.771px] z-[1]" data-name="Avatar Set">
         <div className="overflow-clip relative rounded-[inherit] size-full">
           <div className="absolute bg-[#dedaf9] inset-0 overflow-clip" data-name="Avatars">
@@ -399,7 +399,7 @@ function Frame8() {
 function Frame7() {
   return (
     <div className="backdrop-blur-[3.309px] bg-[rgba(221,224,228,0.24)] relative rounded-[52.95px]">
-      <div className="content-stretch flex flex-col items-start overflow-clip p-[4.269px] relative rounded-[inherit] size-full">
+      <div className="flex flex-col items-start overflow-clip p-[4.269px] relative rounded-[inherit] size-full">
         <Frame8 />
       </div>
       <div aria-hidden="true" className="absolute border-[#eeeff2] border-[1.655px] border-solid inset-[-1.655px] pointer-events-none rounded-[54.605000000000004px]" />
@@ -443,7 +443,7 @@ function Group2() {
 
 function Frame5() {
   return (
-    <div className="content-stretch flex gap-[4px] items-center relative shrink-0">
+    <div className="flex gap-[4px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[20px]" data-name="Bottom Status [1.1]">
         <div className="absolute inset-[18.75%]" data-name="Stroke">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.5 12.5">
@@ -469,7 +469,7 @@ function Frame4() {
 
 function Frame3() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center pl-[12px] relative shrink-0">
+    <div className="flex gap-[10px] items-center pl-[12px] relative shrink-0">
       <div aria-hidden="true" className="absolute border-grey-5 border-l border-solid inset-0 pointer-events-none" />
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-9 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[20px]">Lagos</p>
@@ -484,7 +484,7 @@ function Frame3() {
 
 function Frame2() {
   return (
-    <div className="bg-grey-1 content-stretch flex gap-[12px] items-center pl-[12px] pr-[16px] py-[10px] relative rounded-[999px] shrink-0">
+    <div className="bg-grey-1 flex gap-[12px] items-center pl-[12px] pr-[16px] py-[10px] relative rounded-[999px] shrink-0">
       <Frame5 />
       <Frame3 />
     </div>
@@ -511,13 +511,13 @@ function Frame14() {
 
 function Frame13() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
-      <a href="mailto:josephatadda@gmail.com" className="bg-charcoal content-stretch flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+    <div className="flex gap-[8px] items-center relative shrink-0">
+      <a href="mailto:josephatadda@gmail.com" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[24px]">Contact Me</p>
         </div>
       </a>
-      <a href="/resume.pdf" download className="bg-grey-3 content-stretch flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
+      <a href="/resume.pdf" download className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[24px]">Download Resume</p>
         </div>
@@ -528,7 +528,7 @@ function Frame13() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame14 />
       <Frame13 />
     </div>
@@ -549,7 +549,7 @@ function Frame17() {
 
 function Frame9() {
   return (
-    <Link to="/" className="content-stretch flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
+    <Link to="/" className="flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-7 text-[10px]">
         <p className="leading-[12px]">01/</p>
       </div>
@@ -562,7 +562,7 @@ function Frame9() {
 
 function Frame10() {
   return (
-    <Link to="/works" className="content-stretch flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
+    <Link to="/works" className="flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-7 text-[10px]">
         <p className="leading-[12px]">02/</p>
       </div>
@@ -575,7 +575,7 @@ function Frame10() {
 
 function Frame11() {
   return (
-    <Link to="/about" className="content-stretch flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
+    <Link to="/about" className="flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-7 text-[10px]">
         <p className="leading-[12px]">03/</p>
       </div>
@@ -588,7 +588,7 @@ function Frame11() {
 
 function Frame12() {
   return (
-    <Link to="/playground" className="content-stretch flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
+    <Link to="/playground" className="flex gap-[4px] items-start relative shrink-0 hover:opacity-80 transition-opacity">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-7 text-[10px]">
         <p className="leading-[12px]">04/</p>
       </div>
@@ -601,7 +601,7 @@ function Frame12() {
 
 function Frame() {
   return (
-    <div className="content-stretch flex gap-[32px] items-center leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex gap-[32px] items-center leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <Frame9 />
       <Frame10 />
       <Frame11 />
@@ -612,9 +612,9 @@ function Frame() {
 
 function Frame1() {
   return (
-    <div className="content-stretch flex gap-[40px] items-center relative shrink-0">
+    <div className="flex gap-[40px] items-center relative shrink-0">
       <Frame />
-      <a href="/resume.pdf" download className="bg-charcoal content-stretch flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+      <a href="/resume.pdf" download className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[24px]">Resume</p>
         </div>
@@ -625,7 +625,7 @@ function Frame1() {
 
 function Navbar() {
   return (
-    <div className="absolute content-stretch flex h-[80px] items-center justify-center left-0 overflow-clip py-[20px] right-0 top-0" data-name="Navbar">
+    <div className="absolute flex h-[80px] items-center justify-center left-0 overflow-clip py-[20px] right-0 top-0" data-name="Navbar">
       <div className="flex items-center justify-between w-full max-w-[980px] px-6">
       <Link to="/" className="hover:opacity-80 transition-opacity">
         <p className="font-['Geist:SemiBold',sans-serif] font-semibold leading-[1.5] relative shrink-0 text-charcoal text-[28px] text-center tracking-[-0.5px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
@@ -799,7 +799,7 @@ function Frame19() {
 
 function Frame6() {
   return (
-    <div className="content-stretch flex gap-[4px] items-center relative shrink-0">
+    <div className="flex gap-[4px] items-center relative shrink-0">
       <div className="relative shrink-0 size-[20px]" data-name="Bottom Status [1.1]">
         <div className="absolute inset-[18.75%]" data-name="Stroke">
           <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 12.5 12.5">
@@ -821,7 +821,7 @@ function Frame6() {
 
 function Frame15() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0">
+    <div className="flex flex-col gap-[12px] items-start relative shrink-0">
       <Frame6 />
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[48px] text-black tracking-[-1.5px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Selected Projects</p>
@@ -832,7 +832,7 @@ function Frame15() {
 
 function Frame27() {
   return (
-    <div className="content-stretch flex items-end justify-between relative shrink-0 w-full">
+    <div className="flex items-end justify-between relative shrink-0 w-full">
       <Frame15 />
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[40px] text-black tracking-[-1.5px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">24' - 26'</p>
@@ -856,7 +856,7 @@ function Frame55() {
 
 function Frame20() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Catlog Website Revamp</p>
       </div>
@@ -869,13 +869,13 @@ function Frame20() {
 
 function Frame26() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[12px] items-center relative shrink-0">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">WEB</p>
         </div>
       </div>
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">2025</p>
         </div>
@@ -886,7 +886,7 @@ function Frame26() {
 
 function Frame22() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="flex items-start justify-between relative shrink-0 w-full">
       <Frame20 />
       <Frame26 />
     </div>
@@ -895,7 +895,7 @@ function Frame22() {
 
 function Frame21() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame55 />
       <Frame22 />
     </div>
@@ -912,7 +912,7 @@ function Image() {
 
 function Frame32() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Catlog AI Assistant</p>
       </div>
@@ -925,13 +925,13 @@ function Frame32() {
 
 function Frame33() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[12px] items-center relative shrink-0">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">MOBILE</p>
         </div>
       </div>
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">2024</p>
         </div>
@@ -942,7 +942,7 @@ function Frame33() {
 
 function Frame31() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="flex items-start justify-between relative shrink-0 w-full">
       <Frame32 />
       <Frame33 />
     </div>
@@ -951,7 +951,7 @@ function Frame31() {
 
 function Frame28() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Image />
       <Frame31 />
     </div>
@@ -968,7 +968,7 @@ function Image1() {
 
 function Frame36() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Compstack Hrms Redesign</p>
       </div>
@@ -981,13 +981,13 @@ function Frame36() {
 
 function Frame37() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[12px] items-center relative shrink-0">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">WEB</p>
         </div>
       </div>
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">2024</p>
         </div>
@@ -998,7 +998,7 @@ function Frame37() {
 
 function Frame35() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="flex items-start justify-between relative shrink-0 w-full">
       <Frame36 />
       <Frame37 />
     </div>
@@ -1007,7 +1007,7 @@ function Frame35() {
 
 function Frame34() {
   return (
-    <Link to="/project/compstack" className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full group cursor-pointer">
+    <Link to="/project/compstack" className="flex flex-col gap-[24px] items-start relative shrink-0 w-full group cursor-pointer">
       <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
         <img alt="Compstack HRMS" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full group-hover:scale-[1.02] transition-transform duration-300" src={imgImage1} />
       </div>
@@ -1026,7 +1026,7 @@ function Image2() {
 
 function Frame40() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Fabex</p>
       </div>
@@ -1039,13 +1039,13 @@ function Frame40() {
 
 function Frame41() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[12px] items-center relative shrink-0">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">MOBILE</p>
         </div>
       </div>
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">2026</p>
         </div>
@@ -1056,7 +1056,7 @@ function Frame41() {
 
 function Frame39() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="flex items-start justify-between relative shrink-0 w-full">
       <Frame40 />
       <Frame41 />
     </div>
@@ -1065,7 +1065,7 @@ function Frame39() {
 
 function Frame38() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Image2 />
       <Frame39 />
     </div>
@@ -1082,7 +1082,7 @@ function Image3() {
 
 function Frame44() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Portfolio V.2</p>
       </div>
@@ -1095,13 +1095,13 @@ function Frame44() {
 
 function Frame45() {
   return (
-    <div className="content-stretch flex gap-[12px] items-center relative shrink-0">
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[12px] items-center relative shrink-0">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">WEB</p>
         </div>
       </div>
-      <div className="bg-white content-stretch flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[20px]">2026</p>
         </div>
@@ -1112,7 +1112,7 @@ function Frame45() {
 
 function Frame43() {
   return (
-    <div className="content-stretch flex items-start justify-between relative shrink-0 w-full">
+    <div className="flex items-start justify-between relative shrink-0 w-full">
       <Frame44 />
       <Frame45 />
     </div>
@@ -1121,7 +1121,7 @@ function Frame43() {
 
 function Frame42() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Image3 />
       <Frame43 />
     </div>
@@ -1130,7 +1130,7 @@ function Frame42() {
 
 function Frame23() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[48px] items-start relative shrink-0 w-full">
       <Frame21 />
       <Frame28 />
       <Frame34 />
@@ -1143,7 +1143,7 @@ function Frame23() {
 function Frame30() {
   return (
     <div className="relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col gap-[64px] items-start pb-[160px] pt-[80px] relative w-full max-w-[980px] mx-auto">
+      <div className="flex flex-col gap-[64px] items-start pb-[160px] pt-[80px] relative w-full max-w-[980px] mx-auto">
         <Frame27 />
         <Frame23 />
       </div>
@@ -1172,9 +1172,9 @@ function Video() {
 
 function Frame47() {
   return (
-    <div className="content-stretch flex flex-col gap-[64px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[64px] items-start relative shrink-0 w-full">
       <p className="font-['instrument_serif:Medium',sans-serif] leading-[1.2] min-w-full not-italic relative shrink-0 text-[48px] text-white tracking-[-1.5px] w-[min-content] whitespace-pre-wrap" style={{ fontFeatureSettings: "'zero'" }}>{`I design product experiences, interfaces, and systems that simplify complex products, ensure scalability, and enhance usability. From new workflows to established platforms, I align user needs with business goals through thoughtful, high-performing design`}</p>
-      <Link to="/about" className="bg-grey-3 content-stretch flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
+      <Link to="/about" className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[24px]">About Me</p>
         </div>
@@ -1187,7 +1187,7 @@ function Frame47() {
 function Frame46() {
   return (
     <div className="bg-dark-bg relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col items-start pb-[160px] pt-[300px] relative w-full max-w-[980px] mx-auto">
+      <div className="flex flex-col items-start pb-[160px] pt-[300px] relative w-full max-w-[980px] mx-auto">
         <Frame47 />
       </div>
     </div>
@@ -1196,7 +1196,7 @@ function Frame46() {
 
 function Frame16() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[48px] text-black tracking-[-1.5px]" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Playground</p>
       </div>
@@ -1209,9 +1209,9 @@ function Frame16() {
 
 function Frame49() {
   return (
-    <div className="content-stretch flex items-end justify-between relative shrink-0 w-full">
+    <div className="flex items-end justify-between relative shrink-0 w-full">
       <Frame16 />
-      <Link to="/playground" className="bg-charcoal content-stretch flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+      <Link to="/playground" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
           <p className="leading-[24px]">View Playground</p>
         </div>
@@ -1238,7 +1238,7 @@ function Image5() {
 
 function Frame51() {
   return (
-    <div className="content-stretch flex gap-[20px] h-[496px] items-start relative shrink-0 w-full">
+    <div className="flex gap-[20px] h-[496px] items-start relative shrink-0 w-full">
       <Image4 />
       <Image5 />
     </div>
@@ -1263,7 +1263,7 @@ function Image7() {
 
 function Frame52() {
   return (
-    <div className="content-stretch flex gap-[20px] h-[496px] items-start relative shrink-0 w-full">
+    <div className="flex gap-[20px] h-[496px] items-start relative shrink-0 w-full">
       <Image6 />
       <Image7 />
     </div>
@@ -1272,7 +1272,7 @@ function Frame52() {
 
 function Frame50() {
   return (
-    <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[20px] items-start relative shrink-0 w-full">
       <Frame51 />
       <Frame52 />
     </div>
@@ -1282,7 +1282,7 @@ function Frame50() {
 function Frame48() {
   return (
     <div className="relative shrink-0 w-full">
-      <div className="content-stretch flex flex-col gap-[64px] items-start py-[160px] relative w-full max-w-[980px] mx-auto">
+      <div className="flex flex-col gap-[64px] items-start py-[160px] relative w-full max-w-[980px] mx-auto">
         <Frame49 />
         <Frame50 />
       </div>
@@ -1293,7 +1293,7 @@ function Frame48() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+    <div className="flex flex-col items-start relative shrink-0 w-full">
       <Frame19 />
       <Frame30 />
       <Frame46 />
@@ -1305,7 +1305,7 @@ function Frame29() {
 
 export default function Frame25() {
   return (
-    <div className="bg-canvas content-stretch flex items-start justify-center relative min-h-screen w-full">
+    <div className="bg-canvas flex items-start justify-center relative min-h-screen w-full">
       <Frame29 />
     </div>
   );

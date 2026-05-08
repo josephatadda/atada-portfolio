@@ -10,7 +10,7 @@ import SharedFooter from "../../app/components/SharedFooter";
 
 function ItemLink() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Overview</p>
@@ -21,7 +21,7 @@ function ItemLink() {
 
 function ItemLink1() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Problem</p>
@@ -32,7 +32,7 @@ function ItemLink1() {
 
 function ItemLink2() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Opportunity</p>
@@ -43,7 +43,7 @@ function ItemLink2() {
 
 function ItemLink3() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Features</p>
@@ -54,7 +54,7 @@ function ItemLink3() {
 
 function ItemLink4() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Design System</p>
@@ -65,7 +65,7 @@ function ItemLink4() {
 
 function ItemLink5() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Research</p>
@@ -76,7 +76,7 @@ function ItemLink5() {
 
 function ItemLink6() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Personas</p>
@@ -87,7 +87,7 @@ function ItemLink6() {
 
 function ItemLink7() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">JTBD</p>
@@ -98,7 +98,7 @@ function ItemLink7() {
 
 function ItemLink8() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Architecture</p>
@@ -109,7 +109,7 @@ function ItemLink8() {
 
 function ItemLink9() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
+    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
       <div className="bg-charcoal h-px relative shrink-0 w-[24px]" data-name="Horizontal Divider" />
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[24px]">Edge Cases</p>
@@ -120,7 +120,7 @@ function ItemLink9() {
 
 function List() {
   return (
-    <div className="content-stretch flex flex-col gap-[8px] items-start relative shrink-0 w-[150px]" data-name="List">
+    <div className="flex flex-col gap-[8px] items-start relative shrink-0 w-[150px]" data-name="List">
       <ItemLink />
       <ItemLink1 />
       <ItemLink2 />
@@ -137,7 +137,7 @@ function List() {
 
 function Frame28() {
   return (
-    <div className="content-stretch flex gap-[10px] items-center relative shrink-0">
+    <div className="flex gap-[10px] items-center relative shrink-0">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-9 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Product Design</p>
       </div>
@@ -177,7 +177,7 @@ function Frame28() {
 
 function Frame27() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[10px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[56px] text-black tracking-[-2px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Compstack Redesign</p>
       </div>
@@ -190,7 +190,7 @@ function Frame27() {
 
 function Frame29() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+    <div className="flex flex-col items-start relative shrink-0 w-full">
       <Frame28 />
       <Frame27 />
     </div>
@@ -199,8 +199,8 @@ function Frame29() {
 
 function Frame23() {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
-      <div className="content-stretch flex gap-[6px] items-center justify-center relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex flex-col gap-[32px] items-start relative shrink-0 w-full">
+      <div className="flex gap-[6px] items-center justify-center relative rounded-[999px] shrink-0" data-name="Button">
         <div className="relative shrink-0 size-[20px]" data-name="ArrowBendUpLeft">
           <div className="absolute inset-[18.75%_9.38%_18.75%_9.37%]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 16.2505 12.5003">
@@ -219,7 +219,7 @@ function Frame23() {
 
 function Frame8() {
   return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 text-[16px] whitespace-nowrap">
+    <div className="flex flex-col gap-[6px] items-start relative shrink-0 text-[16px] whitespace-nowrap">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">My Role</p>
       </div>
@@ -232,7 +232,7 @@ function Frame8() {
 
 function Frame9() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px relative text-[16px]">
+    <div className="flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px relative text-[16px]">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Team</p>
       </div>
@@ -245,7 +245,7 @@ function Frame9() {
 
 function Frame10() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px relative">
+    <div className="flex flex-[1_0_0] flex-col gap-[6px] items-start min-w-px relative">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 text-[16px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Timeline</p>
       </div>
@@ -263,7 +263,7 @@ function Frame10() {
 
 function Container() {
   return (
-    <div className="content-stretch flex gap-[40px] items-start leading-[0] not-italic relative shrink-0 tracking-[-0.3px] w-full" data-name="Container">
+    <div className="flex gap-[40px] items-start leading-[0] not-italic relative shrink-0 tracking-[-0.3px] w-full" data-name="Container">
       <Frame8 />
       <Frame9 />
       <Frame10 />
@@ -273,7 +273,7 @@ function Container() {
 
 function Frame6() {
   return (
-    <div className="content-stretch flex flex-col gap-[32px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[32px] items-start relative shrink-0 w-full">
       <Frame23 />
       <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 326">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage326} />
@@ -285,7 +285,7 @@ function Frame6() {
 
 function Frame26() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[8px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[8px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Compstack is an HRMS platform for the Moroccan market, combining payroll, employee records, time off, recruitment, expenses, reporting, and compliance.</p>
       </div>
@@ -301,7 +301,7 @@ function Frame26() {
 
 function Frame7() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">Overview</p>
       </div>
@@ -312,7 +312,7 @@ function Frame7() {
 
 function Frame34() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 text-[0px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 text-[0px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="leading-[1.5] ms-[calc(var(--list-marker-font-size,0)*1.5*1)] text-[17px]">
@@ -359,7 +359,7 @@ function Frame34() {
 
 function Frame33() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 text-[17px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Four issues consistently surfaced:</p>
       </div>
@@ -370,7 +370,7 @@ function Frame33() {
 
 function Frame36() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="ms-[25.5px]">
@@ -391,7 +391,7 @@ function Frame36() {
 
 function Frame35() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 text-[17px] w-full">
+    <div className="flex flex-col gap-[10px] items-start relative shrink-0 text-[17px] w-full">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">This created two risks:</p>
       </div>
@@ -402,7 +402,7 @@ function Frame35() {
 
 function Frame32() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 tracking-[-0.5px] w-full">
+    <div className="flex flex-col gap-[12px] items-start relative shrink-0 tracking-[-0.5px] w-full">
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center relative shrink-0 text-grey-9 text-[17px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">The platform had strong functionality, but lacked coherence — and that made it feel unreliable.</p>
       </div>
@@ -414,7 +414,7 @@ function Frame32() {
 
 function Frame12() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">The Problem</p>
       </div>
@@ -433,7 +433,7 @@ function Image() {
 
 function Frame37() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 text-[17px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">HRMS platforms are inherently complex — multiple user types, high-stakes actions, and interconnected workflows.</p>
       </div>
@@ -459,7 +459,7 @@ function Frame37() {
 
 function Frame13() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">The Challenge</p>
       </div>
@@ -470,7 +470,7 @@ function Frame13() {
 
 function Frame39() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Usability issues in HR software aren’t cosmetic — they directly affect operations.</p>
       </div>
@@ -483,7 +483,7 @@ function Frame39() {
 
 function Frame41() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="ms-[25.5px]">
@@ -511,7 +511,7 @@ function Frame41() {
 
 function Frame40() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">This project was ultimately about confidence:</p>
       </div>
@@ -522,7 +522,7 @@ function Frame40() {
 
 function Frame38() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
       <Frame39 />
       <Frame40 />
     </div>
@@ -531,7 +531,7 @@ function Frame38() {
 
 function Frame14() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">Why It Mattered</p>
       </div>
@@ -542,7 +542,7 @@ function Frame14() {
 
 function Frame44() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="ms-[25.5px]">
@@ -570,7 +570,7 @@ function Frame44() {
 
 function Frame43() {
   return (
-    <div className="content-stretch flex flex-col gap-[10px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[10px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center relative shrink-0 text-grey-10 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Without access to live users, I approached the problem from three angles:</p>
       </div>
@@ -581,7 +581,7 @@ function Frame43() {
 
 function Frame42() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center relative shrink-0 text-grey-9 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Without access to live users, I approached the problem from three angles:</p>
       </div>
@@ -595,7 +595,7 @@ function Frame42() {
 
 function Frame15() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">{`Research & Insight`}</p>
       </div>
@@ -614,7 +614,7 @@ function Image1() {
 
 function Frame45() {
   return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start leading-[0] not-italic relative shrink-0 text-grey-9 text-[0px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col gap-[6px] items-start leading-[0] not-italic relative shrink-0 text-grey-9 text-[0px] tracking-[-0.5px] w-full">
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="leading-[1.5] ms-[calc(var(--list-marker-font-size,0)*1.5*1)] text-[17px]">
@@ -661,7 +661,7 @@ function Frame45() {
 
 function Frame16() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">Key Insights</p>
       </div>
@@ -675,7 +675,7 @@ function Frame16() {
 
 function Frame49() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Dashboard</p>
       </div>
@@ -700,7 +700,7 @@ function Frame55() {
 
 function Frame52() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
+    <div className="flex gap-[8px] items-center relative shrink-0">
       <Frame53 />
       <Frame54 />
       <Frame55 />
@@ -710,8 +710,8 @@ function Frame52() {
 
 function Frame51() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center relative shrink-0">
-      <div className="bg-grey-3 content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[20px] items-center relative shrink-0">
+      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="relative shrink-0 size-[12px]" data-name="ArrowLeft">
           <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
@@ -721,7 +721,7 @@ function Frame51() {
         </div>
       </div>
       <Frame52 />
-      <div className="bg-grey-3 content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="relative shrink-0 size-[12px]" data-name="ArrowRight">
           <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
@@ -736,7 +736,7 @@ function Frame51() {
 
 function Frame50() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
       <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 327">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage327} />
       </div>
@@ -747,7 +747,7 @@ function Frame50() {
 
 function Frame48() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame49 />
       <Frame50 />
     </div>
@@ -756,7 +756,7 @@ function Frame48() {
 
 function Frame58() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Employee Management became the core area for understanding workforce information across onboarding, active employment, and offboarding.</p>
       </div>
@@ -769,7 +769,7 @@ function Frame58() {
 
 function Frame57() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Employee Management</p>
       </div>
@@ -792,7 +792,7 @@ function Frame64() {
 
 function Frame61() {
   return (
-    <div className="content-stretch flex gap-[8px] items-center relative shrink-0">
+    <div className="flex gap-[8px] items-center relative shrink-0">
       <Frame62 />
       <Frame63 />
       <Frame64 />
@@ -802,8 +802,8 @@ function Frame61() {
 
 function Frame60() {
   return (
-    <div className="content-stretch flex gap-[20px] items-center relative shrink-0">
-      <div className="bg-grey-3 content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
+    <div className="flex gap-[20px] items-center relative shrink-0">
+      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="relative shrink-0 size-[12px]" data-name="ArrowLeft">
           <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
@@ -813,7 +813,7 @@ function Frame60() {
         </div>
       </div>
       <Frame61 />
-      <div className="bg-grey-3 content-stretch flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
+      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="relative shrink-0 size-[12px]" data-name="ArrowRight">
           <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
             <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
@@ -828,7 +828,7 @@ function Frame60() {
 
 function Frame59() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
       <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 328">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
       </div>
@@ -839,7 +839,7 @@ function Frame59() {
 
 function Frame56() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame57 />
       <Frame59 />
     </div>
@@ -848,7 +848,7 @@ function Frame56() {
 
 function Frame67() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Redesigned payroll as a guided review workflow. Its role was to help teams prepare, verify, and run payroll with confidence. The flow prioritized understanding before action by making it easier to grasp totals, due dates, employee-level details, and compensation changes in a more structured way.</p>
       </div>
@@ -861,7 +861,7 @@ function Frame67() {
 
 function Frame66() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Payroll</p>
       </div>
@@ -872,7 +872,7 @@ function Frame66() {
 
 function Frame68() {
   return (
-    <div className="content-stretch flex gap-[24px] items-center justify-center relative shrink-0 w-full">
+    <div className="flex gap-[24px] items-center justify-center relative shrink-0 w-full">
       <div className="h-[508.291px] relative rounded-[16px] shrink-0 w-[730px]" data-name="image 328">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
       </div>
@@ -888,7 +888,7 @@ function Frame68() {
 
 function Frame65() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame66 />
       <Frame68 />
     </div>
@@ -897,7 +897,7 @@ function Frame65() {
 
 function Frame71() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Time Off needed to work for both sides of the product. For admins, the redesign improved visibility into leave requests, statuses, and team planning. For employees, it created a clearer path for requesting time off and understanding balances or approval status.</p>
       </div>
@@ -910,7 +910,7 @@ function Frame71() {
 
 function Frame70() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Time Off</p>
       </div>
@@ -929,7 +929,7 @@ function Image2() {
 
 function Frame69() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame70 />
       <Image2 />
     </div>
@@ -938,7 +938,7 @@ function Frame69() {
 
 function Frame74() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Clarified recruitment as a pipeline-management experience. Recruitment was repositioned around tracking progress and making decisions.</p>
       </div>
@@ -951,7 +951,7 @@ function Frame74() {
 
 function Frame73() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Recruitment</p>
       </div>
@@ -970,7 +970,7 @@ function Image3() {
 
 function Frame72() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame73 />
       <Image3 />
     </div>
@@ -979,7 +979,7 @@ function Frame72() {
 
 function Frame77() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Beyond the platform’s core operational areas, I also redesigned supporting modules including Documents, Expenses, Integrations, and Settings.</p>
       </div>
@@ -995,7 +995,7 @@ function Frame77() {
 
 function Frame76() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[12px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-charcoal text-[32px] tracking-[-0.9px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.2]">Supporting Modules</p>
       </div>
@@ -1022,7 +1022,7 @@ function Image5() {
 
 function Frame75() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame76 />
       <Image4 />
       <Image5 />
@@ -1032,7 +1032,7 @@ function Frame75() {
 
 function Frame47() {
   return (
-    <div className="content-stretch flex flex-col gap-[48px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[48px] items-start relative shrink-0 w-full">
       <Frame48 />
       <Frame56 />
       <Frame65 />
@@ -1045,7 +1045,7 @@ function Frame47() {
 
 function Frame46() {
   return (
-    <div className="content-stretch flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Instead of redesigning modules in isolation, I focused on shared patterns and consistent structures that could scale across the product.</p>
       </div>
@@ -1056,7 +1056,7 @@ function Frame46() {
 
 function Frame17() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">The Solution</p>
       </div>
@@ -1067,7 +1067,7 @@ function Frame17() {
 
 function Frame80() {
   return (
-    <div className="content-stretch flex flex-col gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
+    <div className="flex flex-col gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="ms-[25.5px]">
@@ -1109,7 +1109,7 @@ function Frame80() {
 
 function Frame79() {
   return (
-    <div className="content-stretch flex flex-col font-['geist:Medium',sans-serif] gap-[10px] items-start relative shrink-0 w-full">
+    <div className="flex flex-col font-['geist:Medium',sans-serif] gap-[10px] items-start relative shrink-0 w-full">
       <div className="flex flex-col justify-center relative shrink-0 text-grey-10 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">The redesign helped the team:</p>
       </div>
@@ -1120,7 +1120,7 @@ function Frame79() {
 
 function Frame78() {
   return (
-    <div className="content-stretch flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
+    <div className="flex flex-col gap-[12px] items-start relative shrink-0 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center relative shrink-0 text-grey-9 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">The product had not launched by handoff, so I focused outcomes on design and delivery impact rather than live metrics</p>
       </div>
@@ -1134,7 +1134,7 @@ function Frame78() {
 
 function Frame18() {
   return (
-    <div className="content-stretch flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
+    <div className="flex flex-col gap-[16px] items-start leading-[0] not-italic relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">Outcome</p>
       </div>
@@ -1145,7 +1145,7 @@ function Frame18() {
 
 function Frame30() {
   return (
-    <div className="content-stretch flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
+    <div className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
       <Frame6 />
       <Frame7 />
       <Frame12 />
@@ -1166,7 +1166,7 @@ function Frame30() {
 
 function Frame31() {
   return (
-    <div className="content-stretch flex gap-[80px] items-start justify-center relative shrink-0 w-full">
+    <div className="flex gap-[80px] items-start justify-center relative shrink-0 w-full">
       <List />
       <Frame30 />
     </div>
@@ -1177,7 +1177,7 @@ function Frame11() {
   return (
     <div className="relative shrink-0 w-full">
       <div className="flex flex-col items-center justify-center size-full">
-        <div className="content-stretch flex flex-col items-center justify-center pb-[128px] pt-[64px] relative w-full max-w-[980px] mx-auto">
+        <div className="flex flex-col items-center justify-center pb-[128px] pt-[64px] relative w-full max-w-[980px] mx-auto">
           <Frame31 />
         </div>
       </div>
@@ -1187,7 +1187,7 @@ function Frame11() {
 
 function Frame19() {
   return (
-    <div className="content-stretch flex flex-col items-start relative shrink-0 w-full">
+    <div className="flex flex-col items-start relative shrink-0 w-full">
       <SharedNavbar />
       <Frame11 />
       <SharedFooter />
@@ -1197,7 +1197,7 @@ function Frame19() {
 
 export default function Frame20() {
   return (
-    <div className="bg-canvas content-stretch flex items-start justify-center relative min-h-screen w-full">
+    <div className="bg-canvas flex items-start justify-center relative min-h-screen w-full">
       <Frame19 />
     </div>
   );
