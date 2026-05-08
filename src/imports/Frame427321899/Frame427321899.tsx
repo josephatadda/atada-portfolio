@@ -1,4 +1,5 @@
 import svgPaths from "./svg-xn9yhm8jb8";
+import ScrollReveal from "../../app/components/ScrollReveal";
 import imgFrame4273218941 from "./b213f695ffcd88f976f2b8ecdcf370322b767fcd.png";
 import SharedNavbar from "../../app/components/SharedNavbar";
 import SharedFooter from "../../app/components/SharedFooter";
@@ -36344,11 +36345,11 @@ function Frame13() {
     <div className="relative shrink-0 w-full">
       <div className="flex flex-col items-center justify-center size-full">
         <div className="flex flex-col gap-[32px] items-center justify-center py-[64px] relative w-full max-w-[980px] mx-auto">
-          <Frame10 />
-          <Frame11 />
-          <Frame12 />
-          <Frame14 />
-          <Frame15 />
+          <ScrollReveal className="w-full"><Frame10 /></ScrollReveal>
+          <ScrollReveal className="w-full" delay={0.05}><Frame11 /></ScrollReveal>
+          <ScrollReveal className="w-full" delay={0.05}><Frame12 /></ScrollReveal>
+          <ScrollReveal className="w-full" delay={0.05}><Frame14 /></ScrollReveal>
+          <ScrollReveal className="w-full" delay={0.05}><Frame15 /></ScrollReveal>
         </div>
       </div>
     </div>

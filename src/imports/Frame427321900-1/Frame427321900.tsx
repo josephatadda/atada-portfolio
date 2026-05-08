@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import svgPaths from "./svg-kabdf78a5m";
 import imgImage326 from "./cbe6561e4e5045f88b8011359f61774c5d1d84d8.png";
 import imgScreenshot20260506At0411221 from "./366851bab98850436018980d31f8e11e226bc883.png";
@@ -7,133 +8,84 @@ import imgImage327 from "./2b90cef839ed3fe33c8744d975f07ac758f5a7b8.png";
 import imgImage328 from "./b2f1e0ac5389c908871a9a20b6778a4baf96b01f.png";
 import SharedNavbar from "../../app/components/SharedNavbar";
 import SharedFooter from "../../app/components/SharedFooter";
+import ScrollReveal from "../../app/components/ScrollReveal";
 
-function ItemLink() {
+const NAV_ITEMS = [
+  { id: "section-overview", label: "Overview" },
+  { id: "section-problem", label: "Problem" },
+  { id: "section-opportunity", label: "Opportunity" },
+  { id: "section-features", label: "Features" },
+  { id: "section-design-system", label: "Design System" },
+  { id: "section-research", label: "Research" },
+  { id: "section-personas", label: "Personas" },
+  { id: "section-jtbd", label: "JTBD" },
+  { id: "section-architecture", label: "Architecture" },
+  { id: "section-edge-cases", label: "Edge Cases" },
+];
+
+function StickyNav() {
+  const [activeId, setActiveId] = useState("section-overview");
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible.length > 0) {
+          const top = visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
+          setActiveId(top.target.id);
+        }
+      },
+      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+    );
+
+    NAV_ITEMS.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Overview</p>
-      </div>
+    <div className="sticky top-[120px] flex flex-col gap-[8px] items-start shrink-0 w-[150px]" data-name="List">
+      {NAV_ITEMS.map(({ id, label }) => {
+        const isActive = activeId === id;
+        return (
+          <button
+            key={id}
+            onClick={() => scrollTo(id)}
+            className="flex gap-[10px] items-center relative shrink-0 w-full text-left group"
+            data-name="Item → Link"
+          >
+            <div
+              className="h-px relative shrink-0 transition-all duration-200"
+              style={{
+                width: isActive ? "24px" : "16px",
+                backgroundColor: isActive ? "#222222" : "#ababab",
+              }}
+            />
+            <div
+              className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[15px] tracking-[-0.3px] whitespace-nowrap transition-colors duration-200"
+              style={{
+                color: isActive ? "#222222" : "#7c7c7c",
+                fontFeatureSettings: "'zero'",
+                fontWeight: isActive ? 500 : 400,
+              }}
+            >
+              <p className="leading-[24px]">{label}</p>
+            </div>
+          </button>
+        );
+      })}
     </div>
   );
 }
 
-function ItemLink1() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Problem</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink2() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Opportunity</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink3() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Features</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink4() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Design System</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink5() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Research</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink6() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Personas</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink7() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">JTBD</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink8() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-grey-7 h-px relative shrink-0 w-[16px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-8 text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Architecture</p>
-      </div>
-    </div>
-  );
-}
-
-function ItemLink9() {
-  return (
-    <div className="flex gap-[10px] items-center relative shrink-0 w-full" data-name="Item → Link">
-      <div className="bg-charcoal h-px relative shrink-0 w-[24px]" data-name="Horizontal Divider" />
-      <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[15px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[24px]">Edge Cases</p>
-      </div>
-    </div>
-  );
-}
-
-function List() {
-  return (
-    <div className="flex flex-col gap-[8px] items-start relative shrink-0 w-[150px]" data-name="List">
-      <ItemLink />
-      <ItemLink1 />
-      <ItemLink2 />
-      <ItemLink3 />
-      <ItemLink4 />
-      <ItemLink5 />
-      <ItemLink6 />
-      <ItemLink7 />
-      <ItemLink8 />
-      <ItemLink9 />
-    </div>
-  );
-}
 
 function Frame28() {
   return (
@@ -1146,20 +1098,24 @@ function Frame18() {
 function Frame30() {
   return (
     <div className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
-      <Frame6 />
-      <Frame7 />
-      <Frame12 />
-      <div className="aspect-[1432/1030] relative rounded-[16px] shrink-0 w-full" data-name="Screenshot 2026-05-06 at 04.11.22 1">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgScreenshot20260506At0411221} />
+      <div id="section-overview"><ScrollReveal className="w-full"><Frame6 /></ScrollReveal></div>
+      <div id="section-problem"><ScrollReveal className="w-full" delay={0.05}><Frame7 /></ScrollReveal></div>
+      <div id="section-opportunity"><ScrollReveal className="w-full" delay={0.1}><Frame12 /></ScrollReveal></div>
+      <div id="section-features">
+        <ScrollReveal className="w-full">
+          <div className="aspect-[1432/1030] relative rounded-[16px] shrink-0 w-full" data-name="Screenshot 2026-05-06 at 04.11.22 1">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgScreenshot20260506At0411221} />
+          </div>
+        </ScrollReveal>
       </div>
-      <Image />
-      <Frame13 />
-      <Frame14 />
-      <Frame15 />
-      <Image1 />
-      <Frame16 />
-      <Frame17 />
-      <Frame18 />
+      <div id="section-design-system"><ScrollReveal className="w-full"><Image /></ScrollReveal></div>
+      <div id="section-research"><ScrollReveal className="w-full"><Frame13 /></ScrollReveal></div>
+      <div id="section-personas"><ScrollReveal className="w-full"><Frame14 /></ScrollReveal></div>
+      <div id="section-jtbd"><ScrollReveal className="w-full"><Frame15 /></ScrollReveal></div>
+      <div id="section-architecture"><ScrollReveal className="w-full"><Image1 /></ScrollReveal></div>
+      <div id="section-edge-cases"><ScrollReveal className="w-full"><Frame16 /></ScrollReveal></div>
+      <ScrollReveal className="w-full"><Frame17 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame18 /></ScrollReveal>
     </div>
   );
 }
@@ -1167,7 +1123,7 @@ function Frame30() {
 function Frame31() {
   return (
     <div className="flex gap-[80px] items-start justify-center relative shrink-0 w-full">
-      <List />
+      <StickyNav />
       <Frame30 />
     </div>
   );

@@ -515,7 +515,6 @@ function Frame13() {
   return (
     <div className="flex gap-[8px] items-center relative shrink-0">
       <motion.div
-        whileHover={{ scale: 1.03, translateY: -1 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
       >
@@ -526,7 +525,6 @@ function Frame13() {
         </a>
       </motion.div>
       <motion.div
-        whileHover={{ scale: 1.03, translateY: -1 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
       >
@@ -641,7 +639,6 @@ function Frame1() {
     <div className="flex gap-[40px] items-center relative shrink-0">
       <Frame />
       <motion.div
-        whileHover={{ scale: 1.03 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
       >
@@ -1247,7 +1244,6 @@ function Frame47() {
     <div className="flex flex-col gap-[64px] items-start relative shrink-0 w-full">
       <p className="font-['instrument_serif:Medium',sans-serif] leading-[1.2] min-w-full not-italic relative shrink-0 text-[48px] text-white tracking-[-1.5px] w-[min-content] whitespace-pre-wrap" style={{ fontFeatureSettings: "'zero'" }}>{`I design product experiences, interfaces, and systems that simplify complex products, ensure scalability, and enhance usability. From new workflows to established platforms, I align user needs with business goals through thoughtful, high-performing design`}</p>
       <motion.div
-        whileHover={{ scale: 1.03, translateY: -1 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
         className="w-fit"
@@ -1291,7 +1287,6 @@ function Frame49() {
     <div className="flex items-end justify-between relative shrink-0 w-full">
       <Frame16 />
       <motion.div
-        whileHover={{ scale: 1.03, translateY: -1 }}
         whileTap={{ scale: 0.97 }}
         transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
       >

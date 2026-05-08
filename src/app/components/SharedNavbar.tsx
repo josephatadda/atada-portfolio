@@ -50,7 +50,6 @@ export default function SharedNavbar() {
               ))}
             </div>
             <motion.div
-              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
             >
@@ -97,7 +96,6 @@ export default function SharedNavbar() {
               </Link>
             ))}
             <motion.div
-              whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
               className="w-fit"
