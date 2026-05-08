@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext, useContext } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import svgPaths from "./svg-kabdf78a5m";
 import imgImage326 from "./cbe6561e4e5045f88b8011359f61774c5d1d84d8.png";
@@ -9,11 +9,7 @@ import imgImage327 from "./2b90cef839ed3fe33c8744d975f07ac758f5a7b8.png";
 import imgImage328 from "./b2f1e0ac5389c908871a9a20b6778a4baf96b01f.png";
 import SharedNavbar from "../../app/components/SharedNavbar";
 import SharedFooter from "../../app/components/SharedFooter";
-import Lightbox from "../../app/components/Lightbox";
-
-// Lightbox context
-const LightboxContext = createContext<((src: string) => void) | null>(null);
-const useLbOpen = () => useContext(LightboxContext)!;
+import SectionCarousel from "../../app/components/SectionCarousel";
 
 // FadeUp animation component
 function FadeUp({ children, className = "w-full", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
@@ -257,14 +253,12 @@ function Container() {
 }
 
 function Frame6() {
-  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[32px] items-start relative shrink-0 w-full">
       <Frame23 />
       <div
-        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
+        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full"
         data-name="image 326"
-        onClick={() => open(imgImage326)}
       >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage326} />
       </div>
@@ -650,7 +644,6 @@ function Frame45() {
 }
 
 function Frame16() {
-  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
@@ -658,9 +651,8 @@ function Frame16() {
       </div>
       <Frame45 />
       <div
-        className="aspect-[1440/1180] relative shrink-0 w-full cursor-pointer"
+        className="aspect-[1440/1180] relative shrink-0 w-full"
         data-name="image 26"
-        onClick={() => open(imgImage26)}
       >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage26} />
       </div>
@@ -681,68 +673,8 @@ function Frame49() {
   );
 }
 
-function Frame53() {
-  return <div className="bg-accent relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame54() {
-  return <div className="bg-grey-4 relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame55() {
-  return <div className="bg-grey-4 relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame52() {
-  return (
-    <div className="flex gap-[8px] items-center relative shrink-0">
-      <Frame53 />
-      <Frame54 />
-      <Frame55 />
-    </div>
-  );
-}
-
-function Frame51() {
-  return (
-    <div className="flex gap-[20px] items-center relative shrink-0">
-      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
-        <div className="relative shrink-0 size-[12px]" data-name="ArrowLeft">
-          <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
-              <path d={svgPaths.p253b3300} fill="var(--fill-0, #222222)" id="Vector" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <Frame52 />
-      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
-        <div className="relative shrink-0 size-[12px]" data-name="ArrowRight">
-          <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
-              <path d={svgPaths.p16cdfaf0} fill="var(--fill-0, #222222)" id="Vector" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame50() {
-  const open = useLbOpen();
-  return (
-    <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <div
-        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
-        data-name="image 327"
-        onClick={() => open(imgImage327)}
-      >
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage327} />
-      </div>
-      <Frame51 />
-    </div>
-  );
+  return <SectionCarousel images={[imgImage327]} title="Dashboard" />;
 }
 
 function Frame48() {
@@ -778,68 +710,8 @@ function Frame57() {
   );
 }
 
-function Frame62() {
-  return <div className="bg-accent relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame63() {
-  return <div className="bg-grey-4 relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame64() {
-  return <div className="bg-grey-4 relative rounded-[999px] shrink-0 size-[8px]" />;
-}
-
-function Frame61() {
-  return (
-    <div className="flex gap-[8px] items-center relative shrink-0">
-      <Frame62 />
-      <Frame63 />
-      <Frame64 />
-    </div>
-  );
-}
-
-function Frame60() {
-  return (
-    <div className="flex gap-[20px] items-center relative shrink-0">
-      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
-        <div className="relative shrink-0 size-[12px]" data-name="ArrowLeft">
-          <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
-              <path d={svgPaths.p253b3300} fill="var(--fill-0, #222222)" id="Vector" />
-            </svg>
-          </div>
-        </div>
-      </div>
-      <Frame61 />
-      <div className="bg-grey-3 flex items-center justify-center px-[16px] py-[8px] relative rounded-[999px] shrink-0" data-name="Button">
-        <div className="relative shrink-0 size-[12px]" data-name="ArrowRight">
-          <div className="absolute inset-[18.75%_12.5%]" data-name="Vector">
-            <svg className="absolute block inset-0 size-full" fill="none" preserveAspectRatio="none" viewBox="0 0 9.00029 7.50042">
-              <path d={svgPaths.p16cdfaf0} fill="var(--fill-0, #222222)" id="Vector" />
-            </svg>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Frame59() {
-  const open = useLbOpen();
-  return (
-    <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <div
-        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
-        data-name="image 328"
-        onClick={() => open(imgImage328)}
-      >
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
-      </div>
-      <Frame60 />
-    </div>
-  );
+  return <SectionCarousel images={[imgImage328]} title="Employee Management" />;
 }
 
 function Frame56() {
@@ -876,19 +748,7 @@ function Frame66() {
 }
 
 function Frame68() {
-  return (
-    <div className="flex gap-[24px] items-center justify-center relative shrink-0 w-full">
-      <div className="h-[508.291px] relative rounded-[16px] shrink-0 w-[730px]" data-name="image 328">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
-      </div>
-      <div className="h-[508.291px] relative rounded-[16px] shrink-0 w-[730px]" data-name="image 329">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
-      </div>
-      <div className="h-[508.291px] relative rounded-[16px] shrink-0 w-[730px]" data-name="image 330">
-        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
-      </div>
-    </div>
-  );
+  return <SectionCarousel images={[imgImage328, imgImage328, imgImage328]} title="Payroll" />;
 }
 
 function Frame65() {
@@ -925,11 +785,7 @@ function Frame70() {
 }
 
 function Image2() {
-  return (
-    <div className="h-[492px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
-    </div>
-  );
+  return <SectionCarousel images={[imgImage]} title="Time Off" />;
 }
 
 function Frame69() {
@@ -966,11 +822,7 @@ function Frame73() {
 }
 
 function Image3() {
-  return (
-    <div className="h-[492px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
-    </div>
-  );
+  return <SectionCarousel images={[imgImage]} title="Recruitment" />;
 }
 
 function Frame72() {
@@ -1009,28 +861,11 @@ function Frame76() {
   );
 }
 
-function Image4() {
-  return (
-    <div className="h-[492px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
-    </div>
-  );
-}
-
-function Image5() {
-  return (
-    <div className="h-[492px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
-    </div>
-  );
-}
-
 function Frame75() {
   return (
     <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
       <Frame76 />
-      <Image4 />
-      <Image5 />
+      <SectionCarousel images={[imgImage, imgImage]} title="Supporting Modules" />
     </div>
   );
 }
@@ -1149,14 +984,12 @@ function Frame18() {
 }
 
 function ProcessScreenshot() {
-  const open = useLbOpen();
   return (
     <FadeUp className="w-full">
       <img
         alt="Compstack dashboard screenshot"
-        className="w-full h-auto rounded-[16px] block cursor-pointer"
+        className="w-full h-auto rounded-[16px] block"
         src={imgScreenshot20260506At0411221}
-        onClick={() => open(imgScreenshot20260506At0411221)}
       />
     </FadeUp>
   );
@@ -1166,10 +999,10 @@ function Frame30() {
   return (
     <div id="cs-content" className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
       {/* Project header — excluded from nav */}
-      <FadeUp><Frame6 /></FadeUp>
+      <FadeUp className="w-full"><Frame6 /></FadeUp>
 
-      <div data-section><FadeUp><Frame7 /></FadeUp></div>
-      <div data-section><FadeUp><Frame12 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame7 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame12 /></FadeUp></div>
 
       {/* Process image — no heading, not in nav */}
       <ProcessScreenshot />
@@ -1181,9 +1014,9 @@ function Frame30() {
         </div>
       </FadeUp>
 
-      <div data-section><FadeUp><Frame13 /></FadeUp></div>
-      <div data-section><FadeUp><Frame14 /></FadeUp></div>
-      <div data-section><FadeUp><Frame15 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame13 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame14 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame15 /></FadeUp></div>
 
       {/* Architecture placeholder */}
       <FadeUp className="w-full">
@@ -1192,9 +1025,9 @@ function Frame30() {
         </div>
       </FadeUp>
 
-      <div data-section><FadeUp><Frame16 /></FadeUp></div>
-      <div data-section><FadeUp><Frame17 /></FadeUp></div>
-      <div data-section><FadeUp><Frame18 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame16 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame17 /></FadeUp></div>
+      <div data-section className="w-full"><FadeUp className="w-full"><Frame18 /></FadeUp></div>
     </div>
   );
 }
@@ -1221,35 +1054,12 @@ function Frame11() {
 }
 
 function Frame19() {
-  const [lbIndex, setLbIndex] = useState(-1);
-  const realImages = [
-    imgImage326,
-    imgScreenshot20260506At0411221,
-    imgImage26,
-    imgImage327,
-    imgImage328,
-  ];
-
-  const openLightbox = (src: string) => {
-    const idx = realImages.indexOf(src);
-    if (idx >= 0) setLbIndex(idx);
-  };
-
   return (
-    <LightboxContext.Provider value={openLightbox}>
-      <div className="flex flex-col items-start relative shrink-0 w-full">
-        <SharedNavbar />
-        <Frame11 />
-        <SharedFooter />
-        <Lightbox
-          images={realImages}
-          index={lbIndex}
-          onClose={() => setLbIndex(-1)}
-          onNext={() => setLbIndex((i) => (i + 1) % realImages.length)}
-          onPrev={() => setLbIndex((i) => (i - 1 + realImages.length) % realImages.length)}
-        />
-      </div>
-    </LightboxContext.Provider>
+    <div className="flex flex-col items-start relative shrink-0 w-full">
+      <SharedNavbar />
+      <Frame11 />
+      <SharedFooter />
+    </div>
   );
 }
 

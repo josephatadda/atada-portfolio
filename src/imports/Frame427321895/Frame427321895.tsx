@@ -1076,12 +1076,10 @@ function Frame34() {
 function Image2() {
   return (
     <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
-      <motion.img
-        alt=""
-        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full"
+      <img
+        alt="Catlog AI Assistant"
+        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full group-hover:scale-[1.02] transition-transform duration-300"
         src={imgImage}
-        whileHover={{ scale: 1.03 }}
-        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
       />
     </div>
   );
@@ -1091,10 +1089,10 @@ function Frame40() {
   return (
     <div className="flex flex-col gap-[8px] items-start leading-[0] not-italic relative shrink-0 whitespace-nowrap">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center relative shrink-0 text-[32px] text-black tracking-[-0.9px]" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[1.2]">Fabex</p>
+        <p className="leading-[1.2]">Catlog AI Assistant</p>
       </div>
       <div className="flex flex-col font-['geist:Regular',sans-serif] justify-center relative shrink-0 text-grey-8 text-[18px] tracking-[-0.5px]" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[1.5]">Rethinking Conversational Commerce With a Flow-less AI Assistant</p>
+        <p className="leading-[1.5]">Adding AI-powered conversation assistance to a social commerce platform</p>
       </div>
     </div>
   );
@@ -1110,7 +1108,7 @@ function Frame41() {
       </div>
       <div className="bg-white flex items-center justify-center px-[20px] py-[12px] relative rounded-[999px] shrink-0" data-name="Button">
         <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-grey-10 text-[14px] tracking-[-0.2px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[20px]">2026</p>
+          <p className="leading-[20px]">2025</p>
         </div>
       </div>
     </div>
@@ -1128,10 +1126,10 @@ function Frame39() {
 
 function Frame38() {
   return (
-    <div className="flex flex-col gap-[24px] items-start relative shrink-0 w-full">
+    <Link to="/project/catlog-ai" className="flex flex-col gap-[24px] items-start relative shrink-0 w-full group cursor-pointer">
       <Image2 />
       <Frame39 />
-    </div>
+    </Link>
   );
 }
 

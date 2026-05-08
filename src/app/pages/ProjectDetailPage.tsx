@@ -2,6 +2,7 @@ import { Suspense, lazy } from "react";
 import { useParams, Navigate, Link } from "react-router-dom";
 
 const CompstackPage = lazy(() => import("../../imports/Frame427321900-1/Frame427321900"));
+const CatlogAIPage = lazy(() => import("../../imports/catlog-ai/CatlogAI"));
 
 function LoadingFallback() {
   return (
@@ -23,6 +24,14 @@ export default function ProjectDetailPage() {
     return (
       <Suspense fallback={<LoadingFallback />}>
         <CompstackPage />
+      </Suspense>
+    );
+  }
+
+  if (slug === "catlog-ai") {
+    return (
+      <Suspense fallback={<LoadingFallback />}>
+        <CatlogAIPage />
       </Suspense>
     );
   }
