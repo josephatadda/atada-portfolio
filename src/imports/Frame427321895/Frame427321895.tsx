@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import ScrollReveal from "../../app/components/ScrollReveal";
 import svgPaths from "./svg-7e0mvkjuti";
@@ -513,16 +514,28 @@ function Frame14() {
 function Frame13() {
   return (
     <div className="flex gap-[8px] items-center relative shrink-0">
-      <a href="mailto:josephatadda@gmail.com" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
-        <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[24px]">Contact Me</p>
-        </div>
-      </a>
-      <a href="/resume.pdf" download className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
-        <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[24px]">Download Resume</p>
-        </div>
-      </a>
+      <motion.div
+        whileHover={{ scale: 1.03, translateY: -1 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <a href="mailto:josephatadda@gmail.com" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+          <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
+            <p className="leading-[24px]">Contact Me</p>
+          </div>
+        </a>
+      </motion.div>
+      <motion.div
+        whileHover={{ scale: 1.03, translateY: -1 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <a href="/resume.pdf" download className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
+          <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
+            <p className="leading-[24px]">Download Resume</p>
+          </div>
+        </a>
+      </motion.div>
     </div>
   );
 }
@@ -536,15 +549,27 @@ function Frame18() {
   );
 }
 
+const heroContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.08, delayChildren: 0.1 } },
+};
+const heroItem = {
+  hidden: { opacity: 0, y: 14 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.23, 1, 0.32, 1] } },
+};
+
 function Frame17() {
   return (
-    <div
+    <motion.div
       className="absolute flex flex-col gap-[16px] items-start z-[10]"
       style={{ left: "max(24px, calc((100% - 980px) / 2))", top: "176px" }}
+      variants={heroContainer}
+      initial="hidden"
+      animate="show"
     >
-      <div className="hero-enter hero-enter-1"><Frame2 /></div>
-      <div className="hero-enter hero-enter-2"><Frame18 /></div>
-    </div>
+      <motion.div variants={heroItem}><Frame2 /></motion.div>
+      <motion.div variants={heroItem}><Frame18 /></motion.div>
+    </motion.div>
   );
 }
 
@@ -615,11 +640,17 @@ function Frame1() {
   return (
     <div className="flex gap-[40px] items-center relative shrink-0">
       <Frame />
-      <a href="/resume.pdf" download className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
-        <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[24px]">Resume</p>
-        </div>
-      </a>
+      <motion.div
+        whileHover={{ scale: 1.03 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <a href="/resume.pdf" download className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+          <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
+            <p className="leading-[24px]">Resume</p>
+          </div>
+        </a>
+      </motion.div>
     </div>
   );
 }
@@ -700,29 +731,33 @@ function Frame19() {
       <Navbar />
 
       {/* Teal ticket stub — absolute upper-left, outside 980px container */}
-      <div
+      <motion.div
         className="absolute pointer-events-none"
         style={{ left: "124px", top: "110px" }}
+        initial={{ opacity: 0, rotate: -40, scale: 0.8 }}
+        animate={{ opacity: 1, rotate: -31.33, scale: 1 }}
+        transition={{ duration: 0.7, delay: 0.4, ease: [0.23, 1, 0.32, 1] }}
       >
-        <div className="flex-none" style={{ transform: "rotate(-31.33deg)" }}>
-          <div className="relative" style={{ width: "145px", height: "145px" }}>
-            <img
-              alt=""
-              className="absolute inset-0 object-contain size-full"
-              src={imgMyProject29}
-            />
-          </div>
+        <div className="relative" style={{ width: "145px", height: "145px" }}>
+          <img
+            alt=""
+            className="absolute inset-0 object-contain size-full"
+            src={imgMyProject29}
+          />
         </div>
-      </div>
+      </motion.div>
 
       {/* Content column — aligned to 980px container left edge, z-10 */}
       <Frame17 />
 
       {/* ── Right-side floating card stack — absolutely positioned on outer section ── */}
       {/* Back card: upper-right, rotated -9.86deg (Figma: ml-116 mt-0) */}
-      <div
+      <motion.div
         className="absolute pointer-events-none"
         style={{ right: "85px", top: "176px" }}
+        initial={{ opacity: 0, x: 30 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.5, ease: [0.23, 1, 0.32, 1] }}
       >
         <div style={{ transform: "rotate(-9.86deg)" }}>
           <div className="relative" style={{ width: "287px", height: "287px" }}>
@@ -733,12 +768,15 @@ function Frame19() {
             />
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Front card: lower-left of back card, no rotation (Figma: ml-0 mt-164) */}
-      <div
+      <motion.div
         className="absolute pointer-events-none"
         style={{ right: "247px", top: "340px" }}
+        initial={{ opacity: 0, x: 20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.65, ease: [0.23, 1, 0.32, 1] }}
       >
         <div className="relative" style={{ width: "287px", height: "287px" }}>
           <img
@@ -747,13 +785,16 @@ function Frame19() {
             src={imgFrame4273218951}
           />
         </div>
-      </div>
+      </motion.div>
 
       {/* Sticker: "Hello My Name Is Joseph" — overlaps bottom of cards */}
       {/* Figma: ml-115 mt-303, sticker image rotate-[7.95deg] size-106 */}
-      <div
+      <motion.div
         className="absolute pointer-events-none"
         style={{ right: "229px", top: "479px" }}
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.8, type: "spring", bounce: 0.3 }}
       >
         <div className="relative" style={{ width: "190px", height: "190px" }}>
           {/* Sticker image: ml-0 mt-0 within the grid, rotate 7.95deg */}
@@ -793,7 +834,7 @@ function Frame19() {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -844,9 +885,15 @@ function Frame27() {
 
 function Frame55() {
   return (
-    <div className="h-[671.563px] overflow-clip relative rounded-[16px] shrink-0 w-full">
+    <div className="h-[671.563px] overflow-clip relative rounded-[16px] shrink-0 w-full overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none rounded-[16px]">
-        <img alt="" className="absolute h-[142.09%] left-0 max-w-none top-[-0.01%] w-full" src={imgFrame1618868967} />
+        <motion.img
+          alt=""
+          className="absolute h-[142.09%] left-0 max-w-none top-[-0.01%] w-full"
+          src={imgFrame1618868967}
+          whileHover={{ scale: 1.03 }}
+          transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+        />
       </div>
       <div className="-translate-x-1/2 -translate-y-1/2 absolute h-[614.712px] left-[calc(50%-0.19px)] rounded-[9.619px] top-[calc(50%-0.2px)] w-[903.005px]" data-name="Chrome Template - Light 2">
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[9.619px] size-full" src={imgChromeTemplateLight2} />
@@ -905,8 +952,14 @@ function Frame21() {
 
 function Image() {
   return (
-    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
+    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
+      <motion.img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full"
+        src={imgImage}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      />
     </div>
   );
 }
@@ -961,8 +1014,14 @@ function Frame28() {
 
 function Image1() {
   return (
-    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage1} />
+    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
+      <motion.img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full"
+        src={imgImage1}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      />
     </div>
   );
 }
@@ -1019,8 +1078,14 @@ function Frame34() {
 
 function Image2() {
   return (
-    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
+    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
+      <motion.img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full"
+        src={imgImage}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      />
     </div>
   );
 }
@@ -1075,8 +1140,14 @@ function Frame38() {
 
 function Image3() {
   return (
-    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full" data-name="Image">
-      <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full" src={imgImage} />
+    <div className="h-[714px] relative rounded-[24px] shrink-0 w-full overflow-hidden" data-name="Image">
+      <motion.img
+        alt=""
+        className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[24px] size-full"
+        src={imgImage}
+        whileHover={{ scale: 1.03 }}
+        transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+      />
     </div>
   );
 }
@@ -1175,11 +1246,18 @@ function Frame47() {
   return (
     <div className="flex flex-col gap-[64px] items-start relative shrink-0 w-full">
       <p className="font-['instrument_serif:Medium',sans-serif] leading-[1.2] min-w-full not-italic relative shrink-0 text-[48px] text-white tracking-[-1.5px] w-[min-content] whitespace-pre-wrap" style={{ fontFeatureSettings: "'zero'" }}>{`I design product experiences, interfaces, and systems that simplify complex products, ensure scalability, and enhance usability. From new workflows to established platforms, I align user needs with business goals through thoughtful, high-performing design`}</p>
-      <Link to="/about" className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
-        <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[24px]">About Me</p>
-        </div>
-      </Link>
+      <motion.div
+        whileHover={{ scale: 1.03, translateY: -1 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+        className="w-fit"
+      >
+        <Link to="/about" className="bg-grey-3 flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#d5d5d5] transition-colors cursor-pointer" data-name="Button">
+          <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-charcoal text-[16px] tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
+            <p className="leading-[24px]">About Me</p>
+          </div>
+        </Link>
+      </motion.div>
       <Video />
     </div>
   );
@@ -1212,11 +1290,17 @@ function Frame49() {
   return (
     <div className="flex items-end justify-between relative shrink-0 w-full">
       <Frame16 />
-      <Link to="/playground" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
-        <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
-          <p className="leading-[24px]">View Playground</p>
-        </div>
-      </Link>
+      <motion.div
+        whileHover={{ scale: 1.03, translateY: -1 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+      >
+        <Link to="/playground" className="bg-charcoal flex items-center justify-center px-[20px] py-[10px] relative rounded-[999px] shrink-0 hover:bg-[#333] transition-colors cursor-pointer" data-name="Button">
+          <div className="flex flex-col font-['geist:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[16px] text-white tracking-[-0.3px] whitespace-nowrap" style={{ fontFeatureSettings: "'zero'" }}>
+            <p className="leading-[24px]">View Playground</p>
+          </div>
+        </Link>
+      </motion.div>
     </div>
   );
 }

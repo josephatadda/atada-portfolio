@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import Container from "./Container";
 
 const navItems = [
@@ -13,7 +14,12 @@ export default function SharedNavbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-canvas w-full relative z-20">
+    <motion.nav
+      className="bg-canvas w-full relative z-20"
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, ease: [0.23, 1, 0.32, 1] }}
+    >
       <Container>
         <div className="flex items-center justify-between py-[var(--lg)] sm:py-[var(--xl)] md:py-[var(--2xl)]">
           <Link to="/" className="hover:opacity-80 transition-opacity">
@@ -32,24 +38,32 @@ export default function SharedNavbar() {
                   className="flex gap-[var(--3xs)] items-start hover:opacity-75 transition-opacity duration-150"
                 >
                   <span className="font-sans text-grey-7 text-[10px] leading-3">{item.num}</span>
-                  <span
+                  <motion.span
                     className="font-medium text-grey-9 text-[14px] tracking-[-0.2px] leading-5"
                     style={{ fontFamily: "Inter, sans-serif" }}
+                    whileHover={{ opacity: 0.6 }}
+                    transition={{ duration: 0.15 }}
                   >
                     {item.label}
-                  </span>
+                  </motion.span>
                 </Link>
               ))}
             </div>
-            <a
-              href="/resume.pdf"
-              download
-              className="bg-charcoal flex items-center justify-center px-[var(--xl)] py-[var(--sm)] rounded-[var(--full-radius)] hover:bg-[#333] transition-colors"
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
             >
-              <span className="font-sans font-medium text-white text-[15px] lg:text-[16px] tracking-[-0.3px] leading-6">
-                Resume
-              </span>
-            </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="bg-charcoal flex items-center justify-center px-[var(--xl)] py-[var(--sm)] rounded-[var(--full-radius)] hover:bg-[#333] transition-colors"
+              >
+                <span className="font-sans font-medium text-white text-[15px] lg:text-[16px] tracking-[-0.3px] leading-6">
+                  Resume
+                </span>
+              </a>
+            </motion.div>
           </div>
 
           {/* Mobile burger */}
@@ -82,16 +96,23 @@ export default function SharedNavbar() {
                 </span>
               </Link>
             ))}
-            <a
-              href="/resume.pdf"
-              download
-              className="bg-charcoal mt-2 inline-flex items-center justify-center px-[var(--xl)] py-[var(--reg)] rounded-[var(--full-radius)] hover:bg-[#333] transition-colors w-fit"
+            <motion.div
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              transition={{ duration: 0.15, ease: [0.23, 1, 0.32, 1] }}
+              className="w-fit"
             >
-              <span className="font-sans font-medium text-white text-[16px] tracking-[-0.3px] leading-6">Resume</span>
-            </a>
+              <a
+                href="/resume.pdf"
+                download
+                className="bg-charcoal mt-2 inline-flex items-center justify-center px-[var(--xl)] py-[var(--reg)] rounded-[var(--full-radius)] hover:bg-[#333] transition-colors"
+              >
+                <span className="font-sans font-medium text-white text-[16px] tracking-[-0.3px] leading-6">Resume</span>
+              </a>
+            </motion.div>
           </div>
         )}
       </Container>
-    </nav>
+    </motion.nav>
   );
 }
