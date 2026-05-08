@@ -10,56 +10,62 @@ import SharedNavbar from "../../app/components/SharedNavbar";
 import SharedFooter from "../../app/components/SharedFooter";
 import ScrollReveal from "../../app/components/ScrollReveal";
 
-const NAV_ITEMS = [
-  { id: "section-overview", label: "Overview" },
-  { id: "section-problem", label: "Problem" },
-  { id: "section-opportunity", label: "Opportunity" },
-  { id: "section-features", label: "Features" },
-  { id: "section-design-system", label: "Design System" },
-  { id: "section-research", label: "Research" },
-  { id: "section-personas", label: "Personas" },
-  { id: "section-jtbd", label: "JTBD" },
-  { id: "section-architecture", label: "Architecture" },
-  { id: "section-edge-cases", label: "Edge Cases" },
-];
+type NavItem = { id: string; label: string };
 
 function StickyNav() {
-  const [activeId, setActiveId] = useState("section-overview");
+  const [navItems, setNavItems] = useState<NavItem[]>([]);
+  const [activeId, setActiveId] = useState("");
 
+  // Dynamically build nav from data-section-label attributes in the DOM
   useEffect(() => {
+    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-section-label]"));
+    const items = els.map((el) => ({
+      id: el.id,
+      label: el.dataset.sectionLabel ?? "",
+    })).filter((i) => i.id && i.label);
+    setNavItems(items);
+    if (items.length) setActiveId(items[0].id);
+  }, []);
+
+  // Track active section with IntersectionObserver
+  useEffect(() => {
+    if (!navItems.length) return;
     const observer = new IntersectionObserver(
       (entries) => {
         const visible = entries.filter((e) => e.isIntersecting);
         if (visible.length > 0) {
-          const top = visible.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-          setActiveId(top.target.id);
+          const topmost = visible.sort(
+            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
+          )[0];
+          setActiveId(topmost.target.id);
         }
       },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+      { rootMargin: "-15% 0px -60% 0px", threshold: 0 }
     );
-
-    NAV_ITEMS.forEach(({ id }) => {
+    navItems.forEach(({ id }) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
-  }, []);
+  }, [navItems]);
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!el) return;
+    const navbarHeight = 96; // 80px navbar + 16px breathing room
+    const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   return (
     <div className="sticky top-[120px] flex flex-col gap-[8px] items-start shrink-0 w-[150px]" data-name="List">
-      {NAV_ITEMS.map(({ id, label }) => {
+      {navItems.map(({ id, label }) => {
         const isActive = activeId === id;
         return (
           <button
             key={id}
             onClick={() => scrollTo(id)}
-            className="flex gap-[10px] items-center relative shrink-0 w-full text-left group"
+            className="flex gap-[10px] items-center relative shrink-0 w-full text-left"
             data-name="Item → Link"
           >
             <div
@@ -1098,22 +1104,68 @@ function Frame18() {
 function Frame30() {
   return (
     <div className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
-      <div id="section-overview"><ScrollReveal className="w-full"><Frame6 /></ScrollReveal></div>
-      <div id="section-problem"><ScrollReveal className="w-full" delay={0.05}><Frame7 /></ScrollReveal></div>
-      <div id="section-opportunity"><ScrollReveal className="w-full" delay={0.1}><Frame12 /></ScrollReveal></div>
-      <div id="section-features">
+      {/* Project header — no nav section */}
+      <ScrollReveal className="w-full"><Frame6 /></ScrollReveal>
+
+      {/* Overview */}
+      <div id="section-overview" data-section-label="Overview">
+        <ScrollReveal className="w-full" delay={0.05}><Frame7 /></ScrollReveal>
+      </div>
+
+      {/* Problem */}
+      <div id="section-problem" data-section-label="Problem">
+        <ScrollReveal className="w-full"><Frame12 /></ScrollReveal>
+      </div>
+
+      {/* Process image */}
+      <div id="section-process" data-section-label="Process">
         <ScrollReveal className="w-full">
-          <div className="aspect-[1432/1030] relative rounded-[16px] shrink-0 w-full" data-name="Screenshot 2026-05-06 at 04.11.22 1">
-            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgScreenshot20260506At0411221} />
+          <img
+            alt="Compstack dashboard screenshot"
+            className="w-full h-auto rounded-[16px] object-cover pointer-events-none block"
+            src={imgScreenshot20260506At0411221}
+          />
+        </ScrollReveal>
+      </div>
+
+      {/* Design System placeholder */}
+      <div id="section-design-system" data-section-label="Design System">
+        <ScrollReveal className="w-full">
+          <div className="h-[492px] relative rounded-[24px] shrink-0 w-full overflow-hidden bg-grey-4 flex items-center justify-center">
+            <span className="text-grey-7 font-mono text-sm tracking-wider">Design System</span>
           </div>
         </ScrollReveal>
       </div>
-      <div id="section-design-system"><ScrollReveal className="w-full"><Image /></ScrollReveal></div>
-      <div id="section-research"><ScrollReveal className="w-full"><Frame13 /></ScrollReveal></div>
-      <div id="section-personas"><ScrollReveal className="w-full"><Frame14 /></ScrollReveal></div>
-      <div id="section-jtbd"><ScrollReveal className="w-full"><Frame15 /></ScrollReveal></div>
-      <div id="section-architecture"><ScrollReveal className="w-full"><Image1 /></ScrollReveal></div>
-      <div id="section-edge-cases"><ScrollReveal className="w-full"><Frame16 /></ScrollReveal></div>
+
+      {/* Research */}
+      <div id="section-research" data-section-label="Research">
+        <ScrollReveal className="w-full"><Frame13 /></ScrollReveal>
+      </div>
+
+      {/* Personas */}
+      <div id="section-personas" data-section-label="Personas">
+        <ScrollReveal className="w-full"><Frame14 /></ScrollReveal>
+      </div>
+
+      {/* JTBD */}
+      <div id="section-jtbd" data-section-label="JTBD">
+        <ScrollReveal className="w-full"><Frame15 /></ScrollReveal>
+      </div>
+
+      {/* Architecture placeholder */}
+      <div id="section-architecture" data-section-label="Architecture">
+        <ScrollReveal className="w-full">
+          <div className="h-[492px] relative rounded-[24px] shrink-0 w-full overflow-hidden bg-grey-4 flex items-center justify-center">
+            <span className="text-grey-7 font-mono text-sm tracking-wider">Architecture</span>
+          </div>
+        </ScrollReveal>
+      </div>
+
+      {/* Key Insights */}
+      <div id="section-outcomes" data-section-label="Outcomes">
+        <ScrollReveal className="w-full"><Frame16 /></ScrollReveal>
+      </div>
+
       <ScrollReveal className="w-full"><Frame17 /></ScrollReveal>
       <ScrollReveal className="w-full"><Frame18 /></ScrollReveal>
     </div>

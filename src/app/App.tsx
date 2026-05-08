@@ -2,10 +2,12 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ProjectDetailPage from "./pages/ProjectDetailPage";
+import CustomCursor from "./components/CustomCursor";
 
 export default function App() {
   return (
     <BrowserRouter>
+      <CustomCursor />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
