@@ -1,0 +1,23 @@
+/* Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Instrument Serif font */
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&display=swap');
+
+/* Geist font - using unpkg CDN */
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://unpkg.com/geist@1.2.1/dist/fonts/geist-sans/Geist-Variable.woff2') format('woff2-variations');
+}
+
+/* Geist Mono font */
+@font-face {
+  font-family: 'Geist Mono';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('https://unpkg.com/geist@1.2.1/dist/fonts/geist-mono/GeistMono-Variable.woff2') format('woff2-variations');
+}
