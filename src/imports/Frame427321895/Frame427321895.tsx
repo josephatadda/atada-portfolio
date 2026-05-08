@@ -1132,11 +1132,11 @@ function Frame42() {
 function Frame23() {
   return (
     <div className="flex flex-col gap-[48px] items-start relative shrink-0 w-full">
-      <ScrollReveal><Frame21 /></ScrollReveal>
-      <ScrollReveal><Frame28 /></ScrollReveal>
-      <ScrollReveal><Frame34 /></ScrollReveal>
-      <ScrollReveal><Frame38 /></ScrollReveal>
-      <ScrollReveal><Frame42 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame21 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame28 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame34 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame38 /></ScrollReveal>
+      <ScrollReveal className="w-full"><Frame42 /></ScrollReveal>
     </div>
   );
 }
