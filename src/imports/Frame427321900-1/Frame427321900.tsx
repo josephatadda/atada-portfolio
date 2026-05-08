@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, createContext, useContext } from "react";
+import { motion } from "framer-motion";
 import svgPaths from "./svg-kabdf78a5m";
 import imgImage326 from "./cbe6561e4e5045f88b8011359f61774c5d1d84d8.png";
 import imgScreenshot20260506At0411221 from "./366851bab98850436018980d31f8e11e226bc883.png";
@@ -8,37 +9,68 @@ import imgImage327 from "./2b90cef839ed3fe33c8744d975f07ac758f5a7b8.png";
 import imgImage328 from "./b2f1e0ac5389c908871a9a20b6778a4baf96b01f.png";
 import SharedNavbar from "../../app/components/SharedNavbar";
 import SharedFooter from "../../app/components/SharedFooter";
-import ScrollReveal from "../../app/components/ScrollReveal";
+import Lightbox from "../../app/components/Lightbox";
 
+// Lightbox context
+const LightboxContext = createContext<((src: string) => void) | null>(null);
+const useLbOpen = () => useContext(LightboxContext)!;
+
+// FadeUp animation component
+function FadeUp({ children, className = "w-full", delay = 0 }: { children: React.ReactNode; className?: string; delay?: number }) {
+  return (
+    <motion.div
+      className={className}
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-80px" }}
+      transition={{ duration: 0.55, ease: [0.23, 1, 0.32, 1], delay }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
+// Dynamic side nav — builds itself from data-section elements in #cs-content
 type NavItem = { id: string; label: string };
+
+function slugify(text: string) {
+  return "cs-" + text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
 
 function StickyNav() {
   const [navItems, setNavItems] = useState<NavItem[]>([]);
   const [activeId, setActiveId] = useState("");
 
-  // Dynamically build nav from data-section-label attributes in the DOM
   useEffect(() => {
-    const els = Array.from(document.querySelectorAll<HTMLElement>("[data-section-label]"));
-    const items = els.map((el) => ({
-      id: el.id,
-      label: el.dataset.sectionLabel ?? "",
-    })).filter((i) => i.id && i.label);
+    const container = document.getElementById("cs-content");
+    if (!container) return;
+
+    const sections = Array.from(container.querySelectorAll<HTMLElement>("[data-section]"));
+    const items: NavItem[] = sections.flatMap((el) => {
+      const allDivs = Array.from(el.querySelectorAll("div"));
+      const headingDiv = allDivs.find((d) =>
+        d.className.includes("instrument_serif") &&
+        (d.className.includes("36px") || d.className.includes("32px"))
+      );
+      const label = headingDiv?.querySelector("p")?.textContent?.trim() ?? "";
+      if (!label) return [];
+      const id = slugify(label);
+      el.id = id;
+      return [{ id, label }];
+    });
+
     setNavItems(items);
     if (items.length) setActiveId(items[0].id);
   }, []);
 
-  // Track active section with IntersectionObserver
   useEffect(() => {
     if (!navItems.length) return;
     const observer = new IntersectionObserver(
       (entries) => {
-        const visible = entries.filter((e) => e.isIntersecting);
-        if (visible.length > 0) {
-          const topmost = visible.sort(
-            (a, b) => a.boundingClientRect.top - b.boundingClientRect.top
-          )[0];
-          setActiveId(topmost.target.id);
-        }
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible.length > 0) setActiveId(visible[0].target.id);
       },
       { rootMargin: "-15% 0px -60% 0px", threshold: 0 }
     );
@@ -52,8 +84,7 @@ function StickyNav() {
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
     if (!el) return;
-    const navbarHeight = 96; // 80px navbar + 16px breathing room
-    const top = el.getBoundingClientRect().top + window.scrollY - navbarHeight;
+    const top = el.getBoundingClientRect().top + window.scrollY - 96;
     window.scrollTo({ top, behavior: "smooth" });
   };
 
@@ -65,26 +96,22 @@ function StickyNav() {
           <button
             key={id}
             onClick={() => scrollTo(id)}
-            className="flex gap-[10px] items-center relative shrink-0 w-full text-left"
-            data-name="Item → Link"
+            className="flex gap-[10px] items-center w-full text-left"
           >
             <div
-              className="h-px relative shrink-0 transition-all duration-200"
-              style={{
-                width: isActive ? "24px" : "16px",
-                backgroundColor: isActive ? "#222222" : "#ababab",
-              }}
+              className="h-px shrink-0 transition-all duration-200"
+              style={{ width: isActive ? "24px" : "16px", backgroundColor: isActive ? "#222222" : "#ababab" }}
             />
-            <div
-              className="flex flex-col font-['geist:Regular',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[15px] tracking-[-0.3px] whitespace-nowrap transition-colors duration-200"
+            <span
+              className="font-['geist:Regular',sans-serif] not-italic text-[15px] tracking-[-0.3px] whitespace-nowrap transition-colors duration-200"
               style={{
                 color: isActive ? "#222222" : "#7c7c7c",
-                fontFeatureSettings: "'zero'",
                 fontWeight: isActive ? 500 : 400,
+                fontFeatureSettings: "'zero'",
               }}
             >
-              <p className="leading-[24px]">{label}</p>
-            </div>
+              {label}
+            </span>
           </button>
         );
       })}
@@ -230,10 +257,15 @@ function Container() {
 }
 
 function Frame6() {
+  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[32px] items-start relative shrink-0 w-full">
       <Frame23 />
-      <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 326">
+      <div
+        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
+        data-name="image 326"
+        onClick={() => open(imgImage326)}
+      >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage326} />
       </div>
       <Container />
@@ -275,7 +307,7 @@ function Frame34() {
         <ol className="list-decimal" start="1">
           <li className="leading-[1.5] ms-[calc(var(--list-marker-font-size,0)*1.5*1)] text-[17px]">
             <span className="font-['Geist:Medium',sans-serif] font-medium tracking-[-0.5px]" style={{ fontFeatureSettings: "'zero'" }}>
-              Navigation didn’t scale
+              Navigation didn't scale
             </span>
             {` — The structure reflected features rather than how HR teams actually work`}
           </li>
@@ -332,7 +364,7 @@ function Frame36() {
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <ol className="list-decimal" start="1">
           <li className="ms-[25.5px]">
-            <span className="leading-[1.5]">The team couldn’t move forward confidently</span>
+            <span className="leading-[1.5]">The team couldn't move forward confidently</span>
           </li>
         </ol>
       </div>
@@ -397,7 +429,7 @@ function Frame37() {
       </div>
       <div className="flex flex-col justify-center relative shrink-0 text-[0px] w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="text-[17px]">
-          <span className="leading-[1.5]">{`The goal wasn’t to fix individual screens, but to `}</span>
+          <span className="leading-[1.5]">{`The goal wasn't to fix individual screens, but to `}</span>
           <span className="font-['Geist:Medium',sans-serif] font-medium leading-[1.5] tracking-[-0.5px]" style={{ fontFeatureSettings: "'zero'" }}>
             create a unified system without oversimplifying the product.
           </span>
@@ -430,7 +462,7 @@ function Frame39() {
   return (
     <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[6px] items-start relative shrink-0 text-grey-9 w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[1.5]">Usability issues in HR software aren’t cosmetic — they directly affect operations.</p>
+        <p className="leading-[1.5]">Usability issues in HR software aren't cosmetic — they directly affect operations.</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">Unclear workflows can slow payroll, introduce approval errors, and create risk in employee management.</p>
@@ -599,7 +631,7 @@ function Frame45() {
             <span className="font-['Geist:Medium',sans-serif] font-medium tracking-[-0.5px]" style={{ fontFeatureSettings: "'zero'" }}>
               High-stakes actions need review states
             </span>
-            {` — Speed alone isn’t enough; verification is critical`}
+            {` — Speed alone isn't enough; verification is critical`}
           </li>
         </ol>
       </div>
@@ -618,13 +650,18 @@ function Frame45() {
 }
 
 function Frame16() {
+  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[16px] items-start relative shrink-0 w-full">
       <div className="flex flex-col font-['instrument_serif:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[36px] text-black tracking-[-0.72px] whitespace-nowrap">
         <p className="leading-[1.2]">Key Insights</p>
       </div>
       <Frame45 />
-      <div className="aspect-[1440/1180] relative shrink-0 w-full" data-name="image 26">
+      <div
+        className="aspect-[1440/1180] relative shrink-0 w-full cursor-pointer"
+        data-name="image 26"
+        onClick={() => open(imgImage26)}
+      >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgImage26} />
       </div>
     </div>
@@ -693,9 +730,14 @@ function Frame51() {
 }
 
 function Frame50() {
+  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 327">
+      <div
+        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
+        data-name="image 327"
+        onClick={() => open(imgImage327)}
+      >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage327} />
       </div>
       <Frame51 />
@@ -785,9 +827,14 @@ function Frame60() {
 }
 
 function Frame59() {
+  const open = useLbOpen();
   return (
     <div className="flex flex-col gap-[16px] items-center justify-center relative shrink-0 w-full">
-      <div className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full" data-name="image 328">
+      <div
+        className="aspect-[4096/2852] relative rounded-[16px] shrink-0 w-full cursor-pointer"
+        data-name="image 328"
+        onClick={() => open(imgImage328)}
+      >
         <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none rounded-[16px] size-full" src={imgImage328} />
       </div>
       <Frame60 />
@@ -939,10 +986,10 @@ function Frame77() {
   return (
     <div className="flex flex-col font-['geist:Regular',sans-serif] gap-[10px] items-start relative shrink-0 text-grey-9 text-[17px] tracking-[-0.5px] w-full">
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[1.5]">Beyond the platform’s core operational areas, I also redesigned supporting modules including Documents, Expenses, Integrations, and Settings.</p>
+        <p className="leading-[1.5]">Beyond the platform's core operational areas, I also redesigned supporting modules including Documents, Expenses, Integrations, and Settings.</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
-        <p className="leading-[1.5]">I also worked across Documents, Expenses, Integrations, and Settings — supporting areas that were important to the product’s completeness, but needed stronger structure and consistency to feel integrated into the overall system</p>
+        <p className="leading-[1.5]">I also worked across Documents, Expenses, Integrations, and Settings — supporting areas that were important to the product's completeness, but needed stronger structure and consistency to feel integrated into the overall system</p>
       </div>
       <div className="flex flex-col justify-center relative shrink-0 w-full" style={{ fontFeatureSettings: "'zero'" }}>
         <p className="leading-[1.5]">The redesign made these modules easier to navigate and manage by clarifying priorities, organizing information more intentionally, and aligning them with shared product patterns. This helped reduce fragmentation across the platform and reinforced a more scalable foundation for future growth.</p>
@@ -1101,73 +1148,53 @@ function Frame18() {
   );
 }
 
+function ProcessScreenshot() {
+  const open = useLbOpen();
+  return (
+    <FadeUp className="w-full">
+      <img
+        alt="Compstack dashboard screenshot"
+        className="w-full h-auto rounded-[16px] block cursor-pointer"
+        src={imgScreenshot20260506At0411221}
+        onClick={() => open(imgScreenshot20260506At0411221)}
+      />
+    </FadeUp>
+  );
+}
+
 function Frame30() {
   return (
-    <div className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
-      {/* Project header — no nav section */}
-      <ScrollReveal className="w-full"><Frame6 /></ScrollReveal>
+    <div id="cs-content" className="flex flex-[1_0_0] flex-col gap-[40px] items-start min-w-px relative">
+      {/* Project header — excluded from nav */}
+      <FadeUp><Frame6 /></FadeUp>
 
-      {/* Overview */}
-      <div id="section-overview" data-section-label="Overview">
-        <ScrollReveal className="w-full" delay={0.05}><Frame7 /></ScrollReveal>
-      </div>
+      <div data-section><FadeUp><Frame7 /></FadeUp></div>
+      <div data-section><FadeUp><Frame12 /></FadeUp></div>
 
-      {/* Problem */}
-      <div id="section-problem" data-section-label="Problem">
-        <ScrollReveal className="w-full"><Frame12 /></ScrollReveal>
-      </div>
-
-      {/* Process image */}
-      <div id="section-process" data-section-label="Process">
-        <ScrollReveal className="w-full">
-          <img
-            alt="Compstack dashboard screenshot"
-            className="w-full h-auto rounded-[16px] object-cover pointer-events-none block"
-            src={imgScreenshot20260506At0411221}
-          />
-        </ScrollReveal>
-      </div>
+      {/* Process image — no heading, not in nav */}
+      <ProcessScreenshot />
 
       {/* Design System placeholder */}
-      <div id="section-design-system" data-section-label="Design System">
-        <ScrollReveal className="w-full">
-          <div className="h-[492px] relative rounded-[24px] shrink-0 w-full overflow-hidden bg-grey-4 flex items-center justify-center">
-            <span className="text-grey-7 font-mono text-sm tracking-wider">Design System</span>
-          </div>
-        </ScrollReveal>
-      </div>
+      <FadeUp className="w-full">
+        <div className="h-[492px] rounded-[24px] w-full bg-grey-4 flex items-center justify-center">
+          <span className="text-grey-7 font-mono text-sm tracking-wider">Design System</span>
+        </div>
+      </FadeUp>
 
-      {/* Research */}
-      <div id="section-research" data-section-label="Research">
-        <ScrollReveal className="w-full"><Frame13 /></ScrollReveal>
-      </div>
-
-      {/* Personas */}
-      <div id="section-personas" data-section-label="Personas">
-        <ScrollReveal className="w-full"><Frame14 /></ScrollReveal>
-      </div>
-
-      {/* JTBD */}
-      <div id="section-jtbd" data-section-label="JTBD">
-        <ScrollReveal className="w-full"><Frame15 /></ScrollReveal>
-      </div>
+      <div data-section><FadeUp><Frame13 /></FadeUp></div>
+      <div data-section><FadeUp><Frame14 /></FadeUp></div>
+      <div data-section><FadeUp><Frame15 /></FadeUp></div>
 
       {/* Architecture placeholder */}
-      <div id="section-architecture" data-section-label="Architecture">
-        <ScrollReveal className="w-full">
-          <div className="h-[492px] relative rounded-[24px] shrink-0 w-full overflow-hidden bg-grey-4 flex items-center justify-center">
-            <span className="text-grey-7 font-mono text-sm tracking-wider">Architecture</span>
-          </div>
-        </ScrollReveal>
-      </div>
+      <FadeUp className="w-full">
+        <div className="h-[492px] rounded-[24px] w-full bg-grey-4 flex items-center justify-center">
+          <span className="text-grey-7 font-mono text-sm tracking-wider">Architecture</span>
+        </div>
+      </FadeUp>
 
-      {/* Key Insights */}
-      <div id="section-outcomes" data-section-label="Outcomes">
-        <ScrollReveal className="w-full"><Frame16 /></ScrollReveal>
-      </div>
-
-      <ScrollReveal className="w-full"><Frame17 /></ScrollReveal>
-      <ScrollReveal className="w-full"><Frame18 /></ScrollReveal>
+      <div data-section><FadeUp><Frame16 /></FadeUp></div>
+      <div data-section><FadeUp><Frame17 /></FadeUp></div>
+      <div data-section><FadeUp><Frame18 /></FadeUp></div>
     </div>
   );
 }
@@ -1194,12 +1221,35 @@ function Frame11() {
 }
 
 function Frame19() {
+  const [lbIndex, setLbIndex] = useState(-1);
+  const realImages = [
+    imgImage326,
+    imgScreenshot20260506At0411221,
+    imgImage26,
+    imgImage327,
+    imgImage328,
+  ];
+
+  const openLightbox = (src: string) => {
+    const idx = realImages.indexOf(src);
+    if (idx >= 0) setLbIndex(idx);
+  };
+
   return (
-    <div className="flex flex-col items-start relative shrink-0 w-full">
-      <SharedNavbar />
-      <Frame11 />
-      <SharedFooter />
-    </div>
+    <LightboxContext.Provider value={openLightbox}>
+      <div className="flex flex-col items-start relative shrink-0 w-full">
+        <SharedNavbar />
+        <Frame11 />
+        <SharedFooter />
+        <Lightbox
+          images={realImages}
+          index={lbIndex}
+          onClose={() => setLbIndex(-1)}
+          onNext={() => setLbIndex((i) => (i + 1) % realImages.length)}
+          onPrev={() => setLbIndex((i) => (i - 1 + realImages.length) % realImages.length)}
+        />
+      </div>
+    </LightboxContext.Provider>
   );
 }
 
