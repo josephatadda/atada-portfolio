@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ScrollReveal from "../../app/components/ScrollReveal";
 import svgPaths from "./svg-7e0mvkjuti";
 import imgPaperTexture03 from "./paper-texture.png";
 import imgMyProject29 from "./71b4844192f1787455dff7c62e052ad0332f0ed8.png";
@@ -541,8 +542,8 @@ function Frame17() {
       className="absolute flex flex-col gap-[16px] items-start z-[10]"
       style={{ left: "max(24px, calc((100% - 980px) / 2))", top: "176px" }}
     >
-      <Frame2 />
-      <Frame18 />
+      <div className="hero-enter hero-enter-1"><Frame2 /></div>
+      <div className="hero-enter hero-enter-2"><Frame18 /></div>
     </div>
   );
 }
@@ -1131,11 +1132,11 @@ function Frame42() {
 function Frame23() {
   return (
     <div className="flex flex-col gap-[48px] items-start relative shrink-0 w-full">
-      <Frame21 />
-      <Frame28 />
-      <Frame34 />
-      <Frame38 />
-      <Frame42 />
+      <ScrollReveal><Frame21 /></ScrollReveal>
+      <ScrollReveal><Frame28 /></ScrollReveal>
+      <ScrollReveal><Frame34 /></ScrollReveal>
+      <ScrollReveal><Frame38 /></ScrollReveal>
+      <ScrollReveal><Frame42 /></ScrollReveal>
     </div>
   );
 }

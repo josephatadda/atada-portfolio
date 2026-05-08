@@ -65,6 +65,11 @@
   --color-dark-bg: #111111;    /* dark sections */
   --color-accent: #e96b24;     /* italic + dot accent orange */
 
+  /* === ANIMATION TOKENS (Emil Kowalski principles) === */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
   /* === SHADCN TOKENS (preserved) === */
   --font-size: 16px;
   --background: #ffffff;
@@ -288,5 +293,76 @@
     font-size: var(--text-base);
     font-weight: var(--font-weight-normal);
     line-height: 1.5;
+  }
+
+  /* Button press feedback */
+  button, a[role="button"], [data-name="Button"] {
+    transition: transform 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+                opacity 160ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    button:hover, a[role="button"]:hover {
+      opacity: 0.85;
+    }
+  }
+
+  button:active, a[role="button"]:active {
+    transform: scale(0.97);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Hero stagger entrance */
+  .hero-enter {
+    animation: heroFadeUp 500ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)) both;
+  }
+  .hero-enter-1 { animation-delay: 0ms; }
+  .hero-enter-2 { animation-delay: 60ms; }
+  .hero-enter-3 { animation-delay: 120ms; }
+  .hero-enter-4 { animation-delay: 180ms; }
+
+  @keyframes heroFadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-enter {
+      animation: none;
+    }
+  }
+
+  /* Scroll reveal for project cards */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 500ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1)),
+                transform 500ms var(--ease-out, cubic-bezier(0.23, 1, 0.32, 1));
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 }

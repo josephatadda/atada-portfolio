@@ -29,7 +29,7 @@ export default function SharedNavbar() {
                 <Link
                   key={item.to}
                   to={item.to}
-                  className="flex gap-[var(--3xs)] items-start hover:opacity-80 transition-opacity"
+                  className="flex gap-[var(--3xs)] items-start hover:opacity-75 transition-opacity duration-150"
                 >
                   <span className="font-sans text-grey-7 text-[10px] leading-3">{item.num}</span>
                   <span
@@ -74,7 +74,7 @@ export default function SharedNavbar() {
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="flex gap-2 items-baseline py-2 hover:opacity-80 transition-opacity"
+                className="flex gap-2 items-baseline py-2 hover:opacity-75 transition-opacity duration-150"
               >
                 <span className="font-sans text-grey-7 text-[12px]">{item.num}</span>
                 <span className="font-medium text-grey-9 text-[18px] tracking-[-0.3px]" style={{ fontFamily: "Inter, sans-serif" }}>
