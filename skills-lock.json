@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "refactoring-specialist": {
+      "source": "charon-fan/agent-playbook",
+      "sourceType": "github",
+      "skillPath": "skills/refactoring-specialist/SKILL.md",
+      "computedHash": "095bbb482331906ee5c4ea3d45eece638b428fdf56f544011182fc740e7251cf"
+    }
+  }
+}
